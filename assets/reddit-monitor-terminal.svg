@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1064" height="480" viewBox="0 0 1064 480" role="img" aria-label="Example reddit-monitor output: mentions and keyword matches ranked by urgency, and karma and subscriber changes">
+  <rect x="0.5" y="0.5" width="1063" height="479" rx="12" fill="#0b1120" stroke="#1f2937"/>
+  <path d="M12.5 0.5h1039a12 12 0 0 1 12 12v28h-1063v-28a12 12 0 0 1 12-12z" fill="#111827"/>
+  <circle cx="24" cy="20" r="6" fill="#ff5f57"/>
+  <circle cx="44" cy="20" r="6" fill="#febc2e"/>
+  <circle cx="64" cy="20" r="6" fill="#28c840"/>
+  <text x="532" y="25" text-anchor="middle" fill="#6b7280" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">reddit-monitor — sample output</text>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="14" fill="#e5e7eb">
+    <text x="28" y="72"><tspan fill="#2dd4bf">$</tspan> reddit-monitor run --profile acme --keywords acme --communities selfhosted,webdev,sysadmin</text>
+    <text x="28" y="98" xml:space="preserve"><tspan fill="#6b7280">09:00</tspan>  <tspan fill="#60a5fa">signed in</tspan> as <tspan fill="#c4b5fd">u/acme_team</tspan></text>
+    <text x="28" y="124" xml:space="preserve"><tspan fill="#6b7280">09:00</tspan>  <tspan fill="#94a3b8">pass</tspan> <tspan fill="#c4b5fd">u/acme_team</tspan>: starting line: 5 sources, 11 matches; counts: 3 read, 0 changed</text>
+    <text x="28" y="150" xml:space="preserve"><tspan fill="#6b7280">09:10</tspan>  <tspan fill="#f87171">HIGH</tspan>    <tspan fill="#94a3b8">inbox</tspan>  <tspan fill="#c4b5fd">u/devon_k</tspan> mentioned you: <tspan fill="#c4b5fd">u/acme_team</tspan> is the export fixed yet?</text>
+    <text x="28" y="176" xml:space="preserve"><tspan fill="#6b7280">     </tspan>   <tspan fill="#a7f3d0">[Mentions you · Asks a question]</tspan>  <tspan fill="#64748b">https://www.reddit.com/r/selfhosted/comments/k7q2m1/</tspan></text>
+    <text x="28" y="202" xml:space="preserve"><tspan fill="#6b7280">09:10</tspan>  <tspan fill="#f87171">HIGH</tspan>    <tspan fill="#fb923c">r/selfhosted</tspan>  <tspan fill="#c4b5fd">u/mira_codes</tspan>: "Acme sync broken after the update?"</text>
+    <text x="28" y="228" xml:space="preserve"><tspan fill="#6b7280">     </tspan>   <tspan fill="#a7f3d0">[Says "broken" · Asks a question · "acme" is in the title]</tspan>  <tspan fill="#64748b">https://www.reddit.com/r/selfhosted/comments/1fx2a9/</tspan></text>
+    <text x="28" y="254" xml:space="preserve"><tspan fill="#6b7280">09:10</tspan>  <tspan fill="#fbbf24">MEDIUM</tspan>  <tspan fill="#fb923c">r/webdev</tspan>  <tspan fill="#c4b5fd">u/tomasz_w</tspan>: "Acme vs rclone for team backups"</text>
+    <text x="28" y="280" xml:space="preserve"><tspan fill="#6b7280">     </tspan>   <tspan fill="#a7f3d0">["acme" is in the title · No replies yet]</tspan>  <tspan fill="#64748b">https://www.reddit.com/r/webdev/comments/1fx3c4/</tspan></text>
+    <text x="28" y="306" xml:space="preserve"><tspan fill="#6b7280">09:10</tspan>  <tspan fill="#94a3b8">low</tspan>     <tspan fill="#fb923c">r/sysadmin</tspan>  <tspan fill="#c4b5fd">u/quietops</tspan> commented: Moved the team to Acme last month, no complaints.</text>
+    <text x="28" y="332" xml:space="preserve"><tspan fill="#6b7280">     </tspan>   <tspan fill="#64748b">https://www.reddit.com/r/sysadmin/comments/k7q9z0/</tspan></text>
+    <text x="28" y="358" xml:space="preserve"><tspan fill="#6b7280">09:10</tspan>  <tspan fill="#94a3b8">pass</tspan> <tspan fill="#c4b5fd">u/acme_team</tspan>: 5 sources: 4 new (2 urgent) of 14 matches; counts: 1 read, 0 changed</text>
+    <text x="28" y="384" xml:space="preserve"><tspan fill="#6b7280">09:40</tspan>  <tspan fill="#60a5fa">karma</tspan> <tspan fill="#c4b5fd">u/acme_team</tspan>: 1,204 → 1,240 <tspan fill="#34d399">(+36)</tspan></text>
+    <text x="28" y="410" xml:space="preserve"><tspan fill="#6b7280">09:40</tspan>  <tspan fill="#60a5fa">subscribers</tspan> <tspan fill="#fb923c">r/selfhosted</tspan>: 612,480 → 612,992 <tspan fill="#34d399">(+512)</tspan></text>
+    <text x="28" y="436" xml:space="preserve"><tspan fill="#6b7280">09:40</tspan>  <tspan fill="#94a3b8">pass</tspan> <tspan fill="#c4b5fd">u/acme_team</tspan>: 5 sources: 0 new of 14 matches; counts: 3 read, 2 changed</text>
+  </g>
+</svg>
