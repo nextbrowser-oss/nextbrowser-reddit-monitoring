@@ -1,6 +1,6 @@
 {
   "name": "@nextbrowser-oss/reddit-monitoring",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "The open-source Reddit monitoring engine for Nextbrowser: keyword matches, mentions and replies, ranked by urgency, read from a signed-in browser profile.",
   "keywords": [

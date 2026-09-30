@@ -69,7 +69,7 @@ The engine stops at step 2 on purpose: whatever it finds, a person decides what 
 | Keywords | Up to 20 words or phrases, matched case-insensitively as whole words in any script ("nextbrowser" is found in "nextbrowser.com", not in "nextbrowsers"). Exclusion words drop the noise. |
 | Communities | Up to 25 communities read on every pass: new posts, and new comments when keywords are set. Without keywords, every new post is reported. |
 | Search | All of Reddit, newest first, a few keywords per query. Results are matched again locally, because Reddit's search is fuzzier than a keyword. |
-| Urgency triage | *high*, *medium* or *low*, with the reasons, from rules you can read in [`src/triage.ts`](src/triage.ts). The urgent terms are a setting. |
+| Urgency triage | *high*, *medium* or *low*, with the reasons, from rules you can read in [`src/triage.ts`](src/triage.ts). The urgent terms are a setting; they count only where a keyword is named or the account is addressed. |
 | Counts | The account's karma, and each watched community's subscribers. |
 | Embeddable core | `runPass(state) → { state, events, summary, matches }`, with no Node dependency, so it runs in the Nextbrowser renderer. |
 | Standalone CLI | `reddit-monitor` drives any Nextbrowser profile through `nbc`/`nextctl`, for development and for running without the app. |
@@ -164,7 +164,7 @@ The [how it works](docs/how-it-works.md) page explains the details:
 
 This is an early release (`0.x`). Known limits:
 
-- **Not yet verified live.** The requests follow reddit.com's public JSON listings, and every script is tested against stand-in answers of the same shape, including the refusal page reddit.com serves an untrusted profile. A run against a live signed-in profile is still owed; until then, treat a report of "refused" or "not found" as something to check by hand.
+- **Partly verified live.** On 2026-09-30 the engine ran from the Nextbrowser app on a signed-in profile: the account read, the inbox, and the new posts of three communities all answered, and the matches were ranked on the dashboard. The keyword search and triage on live keyword matches have not been run against reddit.com yet; they are covered by tests against stand-in answers of reddit.com's shapes.
 - **Posts only in search.** Reddit's search covers posts, not comments. Comments are matched only in the communities you watch.
 - **Counts only.** It tracks how much karma the account has and how many subscribers a community has, not who they are.
 

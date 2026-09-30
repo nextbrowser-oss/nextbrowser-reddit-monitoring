@@ -7,7 +7,8 @@
 // level. No model is involved and nothing leaves the machine.
 //
 //   addressed to the account (mention, reply, private message)   +4
-//   says one of the urgent terms ("refund", "broken", …)         +3
+//   says one of the urgent terms ("refund", "broken", …), when   +3
+//   it names a keyword or is addressed to the account
 //   asks a question                                              +1
 //   a keyword is in the post's title                             +1
 //   a post nobody has answered yet                               +1
@@ -99,7 +100,12 @@ export function triage(item: RedditItem, context: TriageContext): Triage {
   if (item.addressed) reasons.push({ points: 4, text: ADDRESSED_REASON[item.addressed] });
 
   const { title, body } = matchText(item);
-  const urgent = context.urgent([item.title, body].filter(Boolean).join("\n"));
+  // An urgent term only counts where the item is about you: it names a
+  // keyword or it is addressed to the account. In a community watched without
+  // keywords, "crash" in a stranger's post is that stranger's crash, and
+  // ranking it high buried the posts that did need an answer.
+  const aboutYou = context.keywords.length > 0 || !!item.addressed;
+  const urgent = aboutYou ? context.urgent([item.title, body].filter(Boolean).join("\n")) : [];
   if (urgent.length) reasons.push({ points: 3, text: `Says ${urgent.slice(0, 2).map((term) => `"${term}"`).join(", ")}` });
 
   if (asksQuestion(item)) reasons.push({ points: 1, text: "Asks a question" });

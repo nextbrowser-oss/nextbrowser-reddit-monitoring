@@ -98,7 +98,7 @@ Every match is ranked by a few fixed rules. Each rule adds points and a reason i
 | Rule | Points | Reason shown |
 | --- | --- | --- |
 | Addressed to the account: a username mention, a reply to its post or comment, a private message | +4 | "Mentions you", "Replies to your comment", "Replies to your post", "Private message" |
-| Says an urgent term (`urgentTerms`, e.g. "refund", "broken", "not working") | +3 | `Says "refund"` |
+| Says an urgent term (`urgentTerms`, e.g. "refund", "broken", "not working"), in an item that names a keyword or is addressed to the account | +3 | `Says "refund"` |
 | Asks a question: a question mark in the title or the opening lines, or a title that starts with a question word | +1 | "Asks a question" |
 | A keyword is in the post's title, not just the text | +1 | `"nextbrowser" is in the title` |
 | A post with no comments yet | +1 | "No replies yet" |
@@ -107,6 +107,8 @@ Every match is ranked by a few fixed rules. Each rule adds points and a reason i
 Four points or more is **high**, two or three is **medium**, anything else is **low**. So anything addressed to the account is high; a complaint that names you in the title is high; an unanswered question about you is medium; a passing mention in someone's setup is low.
 
 The rules are few and fixed on purpose. A person deciding what to answer first has to be able to see why the monitor put an item on top, and so does anyone reading the code before trusting it with their account. No model is involved, and nothing is sent anywhere.
+
+An urgent term counts only in an item that is about you: one that names a keyword, or one addressed to the account. In a community watched without keywords, every new post is listed, and "crash" in a stranger's post about their own server is not your emergency.
 
 `urgentTerms` has a default list in [`src/triage.ts`](../src/triage.ts). A team replaces it with its own words: an empty list is a valid choice and turns the rule off.
 

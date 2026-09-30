@@ -54,6 +54,13 @@ describe("triage", () => {
     expect(rank(complaint, ["nextbrowser"])).toEqual({ urgency: "high", score: 4, reasons: ['Says "refund", "charged"', '"nextbrowser" is in the title'] });
   });
 
+  it("counts an urgent term only in an item about the account", () => {
+    const stranger = item(post("sysadmin", 50, "Our server keeps crashing after the update", { comments: 4 }));
+    expect(rank(stranger)).toEqual({ urgency: "low", score: 0, reasons: [] });
+    expect(rank(stranger, ["server"]).reasons[0]).toBe('Says "crashing"');
+    expect(rank(item(mention(50, "u/acme_team the export is broken"), true)).reasons).toEqual(["Mentions you", 'Says "broken"']);
+  });
+
   it("ranks an unanswered question about a keyword medium", () => {
     const question = item(post("webdev", 50, "How does Nextbrowser handle proxies?", { comments: 0 }));
     expect(rank(question, ["nextbrowser"])).toEqual({ urgency: "medium", score: 3, reasons: ["Asks a question", '"nextbrowser" is in the title', "No replies yet"] });
